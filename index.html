@@ -38,6 +38,13 @@
   body.lang-en .it{display:none !important;}
   body:not(.lang-en) .en{display:none !important;}
 
+  /* contact form status */
+  #formStatus{color:#2e7d32;}
+  #formStatus.is-error{color:#c62828;}
+  #formStatus .form-err{display:none;}
+  #formStatus.is-error .form-ok{display:none;}
+  #formStatus.is-error .form-err{display:inline;}
+
   /* ---------- NAV ---------- */
   header{
     position:sticky; top:0; z-index:50;
@@ -969,14 +976,22 @@
               <div class="v en">Italian (native) · English · Spanish</div>
             </div>
           </div>
-          <form onsubmit="return false;">
+          <form id="contactForm" action="https://formsubmit.co/ajax/sicilialawfirm@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nuovo messaggio dal sito — Saverio Sicilia">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <label for="nome"><span class="it">Nome</span><span class="en">Name</span></label>
-            <input id="nome" type="text">
+            <input id="nome" name="name" type="text" required>
             <label for="email">Email</label>
-            <input id="email" type="email">
+            <input id="email" name="email" type="email" required>
             <label for="msg"><span class="it">Messaggio</span><span class="en">Message</span></label>
-            <textarea id="msg" rows="4"></textarea>
+            <textarea id="msg" name="message" rows="4" required></textarea>
             <button type="submit"><span class="it">Invia richiesta</span><span class="en">Send</span></button>
+            <p id="formStatus" role="status" style="margin-top:12px; display:none;">
+              <span class="it form-ok">Messaggio inviato — grazie, ti risponderemo al più presto.</span><span class="en form-ok">Message sent — thank you, we'll reply soon.</span>
+              <span class="it form-err">Si è verificato un errore. Riprova oppure scrivi a <a href="mailto:sicilialawfirm@gmail.com">sicilialawfirm@gmail.com</a>.</span><span class="en form-err">Something went wrong. Please try again or email <a href="mailto:sicilialawfirm@gmail.com">sicilialawfirm@gmail.com</a>.</span>
+            </p>
           </form>
         </div>
       </div>
@@ -1017,6 +1032,35 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
   }, {threshold:0.12});
   revealEls.forEach(el => io.observe(el));
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    const formStatus = document.getElementById('formStatus');
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      formStatus.style.display = 'none';
+      formStatus.classList.remove('is-error');
+      fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
+      })
+        .then((res) => { if (!res.ok) throw new Error('request failed'); })
+        .then(() => {
+          formStatus.classList.remove('is-error');
+          contactForm.reset();
+        })
+        .catch(() => {
+          formStatus.classList.add('is-error');
+        })
+        .finally(() => {
+          formStatus.style.display = 'block';
+          btn.disabled = false;
+        });
+    });
+  }
 </script>
 
 </body>
