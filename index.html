@@ -87,7 +87,7 @@
   .hero h1 em{font-style:italic; color:var(--gold-soft); font-weight:300;}
   .hero .uefa-tag{font-family:'IBM Plex Mono', monospace; font-size:0.8rem; letter-spacing:0.05em; line-height:1.55; color:var(--gold-soft); border-left:2px solid var(--gold); padding-left:14px; margin-top:22px;}
   .hero .uefa-tag strong{display:block; color:#F6F3EA; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; font-size:0.84rem; margin-bottom:2px;}
-  .hero p.lede{margin-top:20px; font-size:1.02rem; line-height:1.65; color:rgba(246,243,234,0.78); max-width:50ch;}
+  .hero p.lede{margin-top:20px; font-size:1.02rem; line-height:1.65; color:rgba(246,243,234,0.78); max-width:50ch; text-align:justify; hyphens:auto;}
   .hero .cta-row{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
   .trust-bar{background:var(--paper-dim); border-bottom:1px solid var(--line);}
   .trust-bar .wrap{display:grid; grid-template-columns:repeat(5,1fr); gap:0;}
@@ -122,8 +122,8 @@
   .art-num span{display:block; opacity:0.55; font-size:0.7rem; margin-top:4px;}
   .art-head h2{font-size:clamp(1.5rem,2.8vw,2.05rem);}
   .art-body{max-width:66ch;}
-  .art-body p{line-height:1.75; font-size:0.98rem; color:rgba(30,28,24,0.85);}
-  .sub{font-size:1rem; margin-top:12px; max-width:62ch; line-height:1.7; color:rgba(30,28,24,0.85);}
+  .art-body p{line-height:1.75; font-size:0.98rem; color:rgba(30,28,24,0.85); text-align:justify; hyphens:auto;}
+  .sub{font-size:1rem; margin-top:12px; max-width:62ch; line-height:1.7; color:rgba(30,28,24,0.85); text-align:justify; hyphens:auto;}
   .network-line{font-size:0.88rem; margin-top:30px; padding-top:22px; border-top:1px solid var(--line); color:rgba(30,28,24,0.7); line-height:1.6; max-width:70ch;}
   .network-line a{color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(156,122,60,0.35);}
   .network-line a:hover{border-color:var(--gold);}
@@ -137,6 +137,9 @@
   .uefa-feature a.uefa-link{display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--gold-soft); border-bottom:1px solid rgba(228,188,116,0.4); padding-bottom:2px; text-decoration:none;}
   .uefa-feature a.uefa-link:hover{border-color:var(--gold-soft);}
   .badge-strip{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .key-points{margin-top:20px; max-width:68ch; padding-left:0; list-style:none;}
+  .key-points li{position:relative; padding-left:22px; margin-top:11px; line-height:1.6; font-size:0.98rem; color:rgba(30,28,24,0.85); text-align:justify; hyphens:auto;}
+  .key-points li::before{content:"—"; position:absolute; left:0; top:0; color:var(--gold); font-family:'IBM Plex Mono', monospace;}
   .badge-strip span{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; border:1px solid rgba(246,243,234,0.3); color:rgba(246,243,234,0.75); padding:5px 11px;}
   .card{border:1px solid var(--line); padding:24px 22px; background:var(--paper); transition:border-color .2s;}
   section.article.alt .card{background:var(--paper-dim);}
@@ -228,7 +231,7 @@
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
     <div class="navbar-right">
       <ul class="links" id="navLinks">
-        <li><a href="#diritto"><span class="it">01 Diritto</span><span class="en">01 Legal</span></a></li>
+        <li><a href="#studio"><span class="it">01 Lo Studio</span><span class="en">01 The Firm</span></a></li>
         <li><a href="#ricerca"><span class="it">02 Ricerca</span><span class="en">02 Research</span></a></li>
         <li><a href="#didattica"><span class="it">03 Didattica</span><span class="en">03 Teaching</span></a></li>
         <li><a href="#pubblicazioni"><span class="it">04 Pubblicazioni</span><span class="en">04 Publications</span></a></li>
@@ -341,18 +344,20 @@
         <span><span class="it">Chi sono</span><span class="en">About</span></span></div>
       <div>
         <h2 class="reveal"><span class="it">Avvocato, manager sportivo e docente</span><span class="en">Attorney-at-Law, sports manager and lecturer</span></h2>
-        <p class="sub reveal">
-          <span class="it">Sostituto Procuratore Federale FIGC e componente della Commissione Vertenze Economiche FIP. Ha maturato una consolidata esperienza nel diritto civile, nella contrattualistica e nel contenzioso, sulla quale ha costruito una specifica competenza nel diritto sportivo, nella governance delle organizzazioni e nel diritto delle nuove tecnologie.</span>
-          <span class="en">Deputy Federal Prosecutor at FIGC and member of the FIP Economic Disputes Commission. He has built consolidated experience in civil law, contract law and litigation, on which he has developed specific expertise in sports law, organisational governance and new technologies law.</span>
-        </p>
-        <p class="sub reveal" style="margin-top:14px;">
-          <span class="it">Assiste atleti, dirigenti, società, associazioni e organizzazioni sportive nella redazione e negoziazione di contratti commerciali, accordi di sponsorizzazione ed endorsement, nella gestione e tutela dei diritti di immagine, nella registrazione dei marchi e nello sviluppo di start-up e nuovi progetti imprenditoriali. Presta inoltre assistenza nei procedimenti dinanzi agli organi di giustizia delle diverse federazioni sportive.</span>
-          <span class="en">He assists athletes, officials, clubs, associations and sports organisations in drafting and negotiating commercial contracts, sponsorship and endorsement agreements, in managing and protecting image rights, in trademark registration and in developing start-ups and new business ventures. He also provides assistance in proceedings before the justice bodies of various sports federations.</span>
-        </p>
-        <p class="sub reveal" style="margin-top:14px;">
-          <span class="it">Svolge attività di consulenza sui profili giuridici della trasformazione digitale, con particolare attenzione alla protezione dei dati personali, alla governance dell'intelligenza artificiale e all'impiego delle nuove tecnologie nello sport.</span>
-          <span class="en">He advises on the legal aspects of digital transformation, with particular attention to personal data protection, AI governance and the use of new technologies in sport.</span>
-        </p>
+        <ul class="key-points reveal">
+          <li><span class="it">Laurea magistrale in Giurisprudenza — Università degli Studi di Salerno.</span><span class="en">Master's degree in Law — University of Salerno.</span></li>
+          <li><span class="it">Pratica forense presso l'Avvocatura Distrettuale dello Stato di Salerno e presso studi legali internazionali (Grosso &amp; Maldonado, Dublino).</span><span class="en">Legal traineeship at the District State Advocacy Office of Salerno and at international law firms (Grosso &amp; Maldonado, Dublin).</span></li>
+          <li><span class="it">Solida esperienza in diritto civile, del lavoro e amministrativo, prima di specializzarsi progressivamente nel diritto sportivo.</span><span class="en">Solid experience in civil, labour and administrative law, before progressively specialising in sports law.</span></li>
+          <li><span class="it">Titolare dal 2015 del proprio studio legale.</span><span class="en">Founder of his own law firm since 2015.</span></li>
+          <li><span class="it">Master in Diritto della Concorrenza e dell'Innovazione (Luiss School of Law), Master in Sport Business Management (Il Sole 24 Ore Business School) e Corso di Alta Formazione in Diritto e Processo Sportivo (Consiglio Nazionale Forense).</span><span class="en">Master's in Competition and Innovation Law (Luiss School of Law), Master's in Sport Business Management (Il Sole 24 Ore Business School) and Advanced Training Course in Sports Law and Procedure (Italian National Bar Council — CNF).</span></li>
+          <li><span class="it">Sostituto Procuratore Federale FIGC dal 2021.</span><span class="en">Deputy Federal Prosecutor at FIGC since 2021.</span></li>
+          <li><span class="it">Componente della Commissione Vertenze Economiche FIP dal 2021.</span><span class="en">Member of the FIP Economic Disputes Commission since 2021.</span></li>
+          <li><span class="it">Dirige il Dipartimento Sport di GMS Legal Consulting (Milano).</span><span class="en">Heads the Sports Department of GMS Legal Consulting (Milan).</span></li>
+          <li><span class="it">Docente presso business school nazionali e internazionali: Scuola Regionale dello Sport CONI Campania, ISDE Law &amp; Business School (Madrid), Il Sole 24 Ore Business School.</span><span class="en">Lecturer at national and international business schools: CONI Campania Regional School of Sport, ISDE Law &amp; Business School (Madrid), Il Sole 24 Ore Business School.</span></li>
+          <li><span class="it">Principal Investigator, UEFA Research Grant Programme 2026/27 — progetto su algoritmi e sport, con particolare attenzione alla tutela dei dati degli atleti.</span><span class="en">Principal Investigator, UEFA Research Grant Programme 2026/27 — a project on algorithms and sport, with particular attention to athlete data protection.</span></li>
+          <li><span class="it">Consulente in ambito civile e commerciale, con una forte specializzazione nel diritto e nel management sportivo: assiste atleti, manager, dirigenti sportivi e club, con patrocinio dinanzi agli organi di giustizia sportiva territoriale e nazionale e dinanzi agli organi di giustizia statale.</span><span class="en">Advises on civil and commercial matters, with strong specialisation in sports law and management: assists athletes, managers, sports executives and clubs, and represents clients before territorial and national sports justice bodies as well as before state courts.</span></li>
+          <li><span class="it">Presta consulenza ad ASD ed enti pubblici nella partecipazione a bandi, e assiste gli atleti, ove opportuno, nelle operazioni di trasferimento.</span><span class="en">Advises amateur sports associations (ASD) and public bodies on participation in public tenders, and assists athletes, where appropriate, with transfer operations.</span></li>
+        </ul>
         <div class="art-body reveal" style="margin-top:16px;">
           <p class="it">Dopo aver conseguito la laurea magistrale in Giurisprudenza presso l'Università degli Studi di Salerno, ha svolto la pratica forense presso l'Avvocatura Distrettuale dello Stato di Salerno, maturando successivamente ulteriori esperienze professionali presso studi legali internazionali, tra cui Grosso &amp; Maldonado Law Firm di Dublino.</p>
           <p class="it" style="margin-top:14px;">Prima di orientare progressivamente la propria attività verso il diritto sportivo, ha costruito una solida e comprovata esperienza nel diritto civile, del lavoro e amministrativo, nella contrattualistica nazionale e internazionale e nel contenzioso. In tali ambiti ha prestato assistenza a privati, imprese e amministrazioni pubbliche, acquisendo competenze trasversali che costituiscono tuttora il fondamento della sua attività professionale e del successivo percorso di specializzazione.</p>
@@ -395,17 +400,17 @@
   </div>
 </section>
 
-<section class="article alt" id="diritto">
+<section class="article alt" id="studio">
   <div class="wrap">
     <div class="art-head">
       <div class="art-num">
-        <svg class="art-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="15" width="30" height="18" rx="2"/><path d="M14 15v-4a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v4"/><line x1="5" y1="23" x2="35" y2="23"/></svg>
-        <span><span class="it">Attività professionale</span><span class="en">Professional activity</span></span></div>
+        <svg class="art-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="16" width="28" height="18" rx="1"/><path d="M6 16 20 6 34 16"/><line x1="12" y1="20" x2="12" y2="30"/><line x1="20" y1="20" x2="20" y2="30"/><line x1="28" y1="20" x2="28" y2="30"/></svg>
+        <span><span class="it">Lo Studio</span><span class="en">The Firm</span></span></div>
       <div>
-        <h2 class="reveal"><span class="it">Diritto e giustizia sportiva</span><span class="en">Law and sports justice</span></h2>
+        <h2 class="reveal"><span class="it">Studio Legale Sicilia</span><span class="en">Studio Legale Sicilia</span></h2>
         <p class="sub reveal">
-          <span class="it">Un percorso professionale costruito tra studio legale, organi di giustizia sportiva e agenzie del settore, con un focus costante sul calcio e sullo sport professionistico.</span>
-          <span class="en">A professional path built across private practice, sports justice bodies and industry agencies, with a constant focus on football and professional sport.</span>
+          <span class="it">Lo Studio Legale Sicilia è una boutique law firm fondata e diretta dall'Avv. Saverio Sicilia a Salerno (Via Ciro D'Amico, 45), attiva nel diritto civile in tutte le sue declinazioni e con una forte e riconosciuta specializzazione nel diritto sportivo. L'Avv. Sicilia dirige inoltre il Dipartimento Sport di <a href="https://www.gmslegal.it/index?lng=2" target="_blank" rel="noopener">GMS Legal Consulting</a>, studio legale con sede a Milano (Viale Cirene, 7), e collabora con lo <a href="https://www.tommasogarzia.com" target="_blank" rel="noopener">Studio dell'Avv. Tommaso Garzia</a> (Spagna) per le questioni di diritto penale. Questa rete di collaborazioni in Italia e all'estero garantisce un supporto competente e su misura in ogni fase dell'attività professionale e imprenditoriale dei propri assistiti, spaziando dalla contrattualistica civile e commerciale al diritto sportivo, con accesso — tramite i partner — anche a competenze in materia di responsabilità professionale, diritto del lavoro, diritto bancario, diritto immobiliare e diritto penale.</span>
+          <span class="en">Studio Legale Sicilia is a boutique law firm founded and led by Avv. Saverio Sicilia in Salerno (Via Ciro D'Amico, 45), active across the full range of civil law with a strong and recognised specialisation in sports law. Avv. Sicilia also heads the Sports Department of <a href="https://www.gmslegal.it/index?lng=2" target="_blank" rel="noopener">GMS Legal Consulting</a>, a law firm based in Milan (Viale Cirene, 7), and collaborates with the <a href="https://www.tommasogarzia.com" target="_blank" rel="noopener">practice of Avv. Tommaso Garzia</a> (Spain) for criminal law matters. This network of collaborations in Italy and abroad ensures competent, tailored support at every stage of clients' professional and business activity, spanning civil and commercial contract law through to sports law, with access — through its partners — to expertise in professional liability, employment law, banking law, real estate law and criminal law.</span>
         </p>
 
         <div class="advisory-box reveal">
@@ -448,24 +453,26 @@
           </div>
           <div class="card reveal">
             <span class="num">2.4</span>
+            <span class="period it">Incarico attuale · Milano</span><span class="period en">Current role · Milan</span>
+            <h3 class="it">Direttore — Dipartimento Sport, GMS Legal Consulting</h3><h3 class="en">Head — Sports Department, GMS Legal Consulting</h3>
+            <p class="it">Coordinamento delle attività di diritto sportivo dello studio, in collaborazione con il team di Milano.</p>
+            <p class="en">Coordination of the firm's sports-law practice, in collaboration with the Milan team.</p>
+          </div>
+          <div class="card reveal">
+            <span class="num">2.5</span>
             <span class="period it">Fino al 2021</span><span class="period en">Until 2021</span>
             <h3 class="it">Collaborazioni internazionali nel calcio professionistico</h3><h3 class="en">International Collaborations in Professional Football</h3>
             <p class="it">Esperienza pregressa come consulente in operazioni e collaborazioni internazionali nel mondo del calcio, in Italia e all'estero.</p>
             <p class="en">Prior experience as a consultant on international deals and collaborations in professional football, in Italy and abroad.</p>
           </div>
           <div class="card reveal">
-            <span class="num">2.5</span>
+            <span class="num">2.6</span>
             <span class="period it">Attività continuativa</span><span class="period en">Ongoing</span>
-            <h3 class="it">Consulenza ad ASD e società sportive</h3><h3 class="en">Advice to Amateur Sports Associations & Clubs</h3>
-            <p class="it">Costituzione e modifiche statutarie, rapporti tra dirigenti, tesserati e atleti.</p>
-            <p class="en">Incorporation and bylaw amendments, relations between officers, members and athletes.</p>
+            <h3 class="it">Consulenza ad ASD, enti pubblici e società sportive</h3><h3 class="en">Advice to Amateur Sports Associations, Public Bodies & Clubs</h3>
+            <p class="it">Costituzione e modifiche statutarie, partecipazione a bandi pubblici, rapporti tra dirigenti, tesserati e atleti, assistenza nelle operazioni di trasferimento.</p>
+            <p class="en">Incorporation and bylaw amendments, participation in public tenders, relations between officers, members and athletes, assistance with transfer operations.</p>
           </div>
         </div>
-
-        <p class="network-line reveal">
-          <span class="it">Collaboro stabilmente con <a href="https://www.gmslegal.it/index?lng=2" target="_blank" rel="noopener">G.M. &amp; S. Legal</a>, studio legale associato con sedi a Salerno e Milano, e con lo <a href="https://www.tommasogarzia.com" target="_blank" rel="noopener">Studio Garzia</a>, con sedi a Madrid e nelle Isole Canarie.</span>
-          <span class="en">I collaborate on an ongoing basis with <a href="https://www.gmslegal.it/index?lng=2" target="_blank" rel="noopener">G.M. &amp; S. Legal</a>, a law firm with offices in Salerno and Milan, and with <a href="https://www.tommasogarzia.com" target="_blank" rel="noopener">Studio Garzia</a>, based in Madrid and the Canary Islands.</span>
-        </p>
       </div>
     </div>
   </div>
