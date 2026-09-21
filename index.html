@@ -134,8 +134,11 @@
   .pitch-lines svg{width:100%; height:100%; display:block;}
   .hero .wrap{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center; position:relative; z-index:2;}
   @media(max-width:880px){.hero .wrap{grid-template-columns:1fr; gap:56px;}}
-  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:0.76rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-soft); display:flex; align-items:center; gap:10px; margin-bottom:20px;}
-  .eyebrow .bar{width:26px; height:1px; background:var(--gold-soft);}
+  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:0.76rem; line-height:1.6; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-soft); display:flex; align-items:flex-start; gap:10px; margin-bottom:20px;}
+  .eyebrow .bar{width:26px; height:1px; background:var(--gold-soft); margin-top:9px; flex-shrink:0;}
+  @media(max-width:640px){
+    .eyebrow{font-size:0.68rem; letter-spacing:0.08em; line-height:1.55;}
+  }
   .hero h1{font-size:clamp(2rem, 4.2vw, 3rem); line-height:1.14; color:#F6F3EA;}
   .hero h1 em{font-style:italic; color:var(--gold-soft); font-weight:300;}
   .hero .uefa-tag{font-family:'IBM Plex Mono', monospace; font-size:0.8rem; letter-spacing:0.05em; line-height:1.55; color:var(--gold-soft); border-left:2px solid var(--gold); padding-left:14px; margin-top:22px;}
@@ -323,8 +326,8 @@
   <div class="wrap">
     <div>
       <div class="eyebrow"><span class="bar"></span>
-        <span class="it" style="text-align:justify;">Diritto Civile e Commerciale<br>Proprietà Intellettuale e Concorrenza<br>Innovazione, Nuove Tecnologie e IA</span>
-        <span class="en" style="text-align:justify;">Civil & Commercial Law<br>Intellectual Property & Competition<br>Innovation, New Technologies & AI</span>
+        <span class="it">Diritto Civile e Commerciale · Proprietà Intellettuale e Concorrenza · Innovazione, Nuove Tecnologie e IA</span>
+        <span class="en">Civil & Commercial Law · Intellectual Property & Competition · Innovation, New Technologies & AI</span>
       </div>
       <h1>
         <span class="it">Avvocato,<br>manager sportivo<br>e docente</span>
@@ -401,12 +404,10 @@
           <li><span class="it">Principal Investigator, UEFA Research Grant Programme 2026/27 — progetto su algoritmi e sport, con particolare attenzione alla tutela dei dati degli atleti.</span><span class="en">Principal Investigator, UEFA Research Grant Programme 2026/27 — a project on algorithms and sport, with particular attention to athlete data protection.</span></li>
           <li><span class="it">Dottorando di Ricerca presso il Dipartimento di Scienze Politiche e della Comunicazione dell'Università degli Studi di Salerno dal 2022.</span><span class="en">PhD candidate at the Department of Political and Communication Sciences, University of Salerno, since 2022.</span></li>
           <li><span class="it">Docente a contratto presso ISDE Law &amp; Business School (Madrid), Il Sole 24 Ore Business School (Milano) e il Master in Diritto e Sport dell'Università Sapienza di Roma.</span><span class="en">Adjunct lecturer at ISDE Law &amp; Business School (Madrid), Il Sole 24 Ore Business School (Milan) and the Master's in Sports Law at Sapienza University of Rome.</span></li>
-          <li><span class="it">Sostituto Procuratore Federale FIGC dal 2021.</span><span class="en">Deputy Federal Prosecutor at FIGC since 2021.</span></li>
-          <li><span class="it">Componente della Commissione Vertenze Economiche FIP dal 2021.</span><span class="en">Member of the FIP Economic Disputes Commission since 2021.</span></li>
-          <li><span class="it">Componente dell'Associazione Italiana Avvocati dello Sport (AIAS) dal 2019.</span><span class="en">Member of the Italian Association of Sports Lawyers (AIAS) since 2019.</span></li>
-          <li><span class="it">Docente dal 2020 presso la Scuola Regionale dello Sport CONI Campania.</span><span class="en">Lecturer at the CONI Campania Regional School of Sport since 2020.</span></li>
-          <li><span class="it">Titolare dal 2015 del proprio studio legale.</span><span class="en">Founder of his own law firm since 2015.</span></li>
-          <li><span class="it">Master in Diritto della Concorrenza e dell'Innovazione presso la <strong>Luiss School of Law</strong> (2015/16), Master in Sport Business Management presso <strong>Il Sole 24 Ore Business School</strong> (2018) e Corso di Alta Formazione in Diritto e Processo Sportivo presso il <strong>Consiglio Nazionale Forense</strong> (2019).</span><span class="en">Master's in Competition and Innovation Law at <strong>Luiss School of Law</strong> (2015/16), Master's in Sport Business Management at <strong>Il Sole 24 Ore Business School</strong> (2018) and Advanced Training Course in Sports Law and Procedure at the <strong>Italian National Bar Council (CNF)</strong> (2019).</span></li>
+          <li><span class="it">Sostituto Procuratore Federale FIGC e componente della Commissione Vertenze Economiche FIP, entrambi dal 2021.</span><span class="en">Deputy Federal Prosecutor at FIGC and member of the FIP Economic Disputes Commission, both since 2021.</span></li>
+          <li><span class="it">Componente dell'Associazione Italiana Avvocati dello Sport (AIAS) dal 2019 e docente, dal 2020, presso la Scuola Regionale dello Sport CONI Campania.</span><span class="en">Member of the Italian Association of Sports Lawyers (AIAS) since 2019 and lecturer at the CONI Campania Regional School of Sport since 2020.</span></li>
+          <li><span class="it">Titolare dal 2015 dello Studio Legale Sicilia.</span><span class="en">Founder of Studio Legale Sicilia since 2015.</span></li>
+          <li><span class="it">Master in Diritto della Concorrenza e dell'Innovazione presso la Luiss School of Law (2015/16), Master in Sport Business Management presso Il Sole 24 Ore Business School (2018) e Corso di Alta Formazione in Diritto e Processo Sportivo presso il Consiglio Nazionale Forense (2019).</span><span class="en">Master's in Competition and Innovation Law at Luiss School of Law (2015/16), Master's in Sport Business Management at Il Sole 24 Ore Business School (2018) and Advanced Training Course in Sports Law and Procedure at the Italian National Bar Council (CNF) (2019).</span></li>
           <li><span class="it">Pratica forense presso l'Avvocatura Distrettuale dello Stato di Salerno e Progetto Leonardo LLM a Dublino presso lo studio Grosso &amp; Maldonado.</span><span class="en">Legal traineeship at the District State Advocacy Office of Salerno and Leonardo LLM Project in Dublin at Grosso &amp; Maldonado.</span></li>
           <li><span class="it">Laurea magistrale in Giurisprudenza — Università degli Studi di Salerno.</span><span class="en">Master's degree in Law — University of Salerno.</span></li>
         </ul>
