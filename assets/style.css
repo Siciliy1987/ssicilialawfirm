@@ -241,3 +241,6 @@
     .nav-cta{padding:9px 10px; font-size:0.66rem;}
     .lang-switch button{padding:6px 8px;}
   }
+
+  .lang-switch{flex-shrink:0;}
+  .lang-switch button{white-space:nowrap;}

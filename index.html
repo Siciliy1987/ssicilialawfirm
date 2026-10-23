@@ -13,6 +13,9 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="Sintesi per assistenti AI">
 <link rel="canonical" href="https://sicilialawfirm.it/">
+<link rel="alternate" hreflang="it" href="https://sicilialawfirm.it/">
+<link rel="alternate" hreflang="en" href="https://sicilialawfirm.it/en/">
+<link rel="alternate" hreflang="x-default" href="https://sicilialawfirm.it/">
 <meta name="msvalidate.01" content="A976DEEF75B888488E20E91839288352" />
 
 <meta property="og:type" content="website">
@@ -21,7 +24,7 @@
 <meta property="og:description" content="Studio Legale Avv. Saverio Sicilia, Salerno (Via Ciro D'Amico 45) e Milano (Viale Cirene 7). Avvocato civilista e di diritto sportivo: responsabilità civile, contratti, recupero crediti, contratti sportivi, agenti, sponsorizzazioni, diritti d'immagine e giustizia sportiva. Tel. +39 380 205 0135.">
 <meta property="og:url" content="https://sicilialawfirm.it/">
 <meta property="og:locale" content="it_IT">
-<meta property="og:image" content="https://sicilialawfirm.it/img/og-saverio-sicilia.jpg">
+<meta property="og:image" content="https://sicilialawfirm.it/img/og-studio-legale-saverio-sicilia.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Studio Legale Avv. Saverio Sicilia, Salerno e Milano">
@@ -1370,24 +1373,13 @@
   document.getElementById('yearIt').textContent = new Date().getFullYear();
   document.getElementById('yearEn').textContent = new Date().getFullYear();
 
-  function setLang(lang, keepUrl){
-    document.body.classList.toggle('lang-en', lang === 'en');
-    document.getElementById('btnIt').classList.toggle('active', lang === 'it');
-    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
-    document.documentElement.lang = lang;
-    if (!keepUrl) {
-      try {
-        const u = new URL(location.href);
-        if (lang === 'en') u.searchParams.set('lang', 'en'); else u.searchParams.delete('lang');
-        history.replaceState(null, '', u.pathname + u.search + u.hash);
-      } catch (e) {}
-    }
+  const IS_EN = location.pathname.replace(/\/+$/, '') === '/en';
+  function setLang(lang){
+    if (lang === 'en' && !IS_EN) { location.href = '/en/' + location.hash; return; }
+    if (lang === 'it' && IS_EN) { location.href = '/' + location.hash; return; }
   }
-  // link diretto alla versione inglese: https://sicilialawfirm.it/?lang=en
-  (function(){
-    const q = new URLSearchParams(location.search).get('lang');
-    if (q === 'en' || location.hash === '#en') setLang('en', true);
-  })();
+  // vecchio link ?lang=en: porta alla pagina inglese
+  if (!IS_EN && new URLSearchParams(location.search).get('lang') === 'en') location.replace('/en/' + location.hash);
 
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
