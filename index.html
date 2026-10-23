@@ -1370,11 +1370,24 @@
   document.getElementById('yearIt').textContent = new Date().getFullYear();
   document.getElementById('yearEn').textContent = new Date().getFullYear();
 
-  function setLang(lang){
+  function setLang(lang, keepUrl){
     document.body.classList.toggle('lang-en', lang === 'en');
     document.getElementById('btnIt').classList.toggle('active', lang === 'it');
     document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+    if (!keepUrl) {
+      try {
+        const u = new URL(location.href);
+        if (lang === 'en') u.searchParams.set('lang', 'en'); else u.searchParams.delete('lang');
+        history.replaceState(null, '', u.pathname + u.search + u.hash);
+      } catch (e) {}
+    }
   }
+  // link diretto alla versione inglese: https://sicilialawfirm.it/?lang=en
+  (function(){
+    const q = new URLSearchParams(location.search).get('lang');
+    if (q === 'en' || location.hash === '#en') setLang('en', true);
+  })();
 
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
